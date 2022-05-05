@@ -26,7 +26,7 @@ struct HomePage: View {
     let width = UIScreen.main.bounds.width
     let height = UIScreen.main.bounds.height
     @State var  filterStr = ""
-    var booksFiltered: [Photo] {
+    var camerasFiltered: [Photo] {
                get {
                   (filterStr.isEmpty )
                    ? viewModel.articleList
@@ -100,7 +100,7 @@ struct HomePage: View {
                     ScrollView {
                         VStack{
                             LazyVGrid(columns: columns, spacing: 20) {
-                                ForEach(booksFiltered, id: \.self) { item in
+                                ForEach(camerasFiltered, id: \.self) { item in
                                     ContentView(article: item)
                                         .onAppear(perform: {
                                             viewModel.index += 1
